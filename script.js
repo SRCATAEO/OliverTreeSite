@@ -1,22 +1,76 @@
-// Fade in sections on scroll
-(function() {
-    var sections = document.querySelectorAll('.intro, .sobre, .galeria, .discografia, .timeline, .video-sec, .mensaje');
+// Loader
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('loader').classList.add('done');
+        document.querySelector('.hero').classList.add('loaded');
+    }, 1400);
+});
 
-    sections.forEach(function(sec) {
-        sec.classList.add('fade-in');
+// Scroll reveal
+(function() {
+    var items = document.querySelectorAll('.sobre-layout, .disco-card, .tl-item, .contexto, .cierre, .video-sec');
+
+    items.forEach(function(el) {
+        el.classList.add('reveal');
     });
 
-    function checkScroll() {
-        var triggerBottom = window.innerHeight * 0.88;
-
-        sections.forEach(function(sec) {
-            var top = sec.getBoundingClientRect().top;
-            if (top < triggerBottom) {
-                sec.classList.add('visible');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
-    }
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-    window.addEventListener('scroll', checkScroll);
-    checkScroll();
+    items.forEach(function(el) {
+        observer.observe(el);
+    });
+})();
+
+// Parallax sutil en hero
+(function() {
+    var heroContent = document.querySelector('.hero-content');
+    var heroImg = document.querySelector('.hero-img');
+    var ticking = false;
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                var scrolled = window.pageYOffset;
+                var vh = window.innerHeight;
+
+                if (scrolled < vh) {
+                    var progress = scrolled / vh;
+                    heroContent.style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
+                    heroContent.style.opacity = 1 - progress * 1.2;
+                    heroImg.style.transform = 'scale(' + (1 + progress * 0.05) + ')';
+                }
+
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+})();
+
+// Stagger timeline items
+(function() {
+    var tlItems = document.querySelectorAll('.tl-item');
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var delay = Array.from(tlItems).indexOf(entry.target) * 100;
+                setTimeout(function() {
+                    entry.target.classList.add('visible');
+                }, delay);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    tlItems.forEach(function(item) {
+        observer.observe(item);
+    });
 })();
