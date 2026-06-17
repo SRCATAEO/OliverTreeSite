@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oliver Tree — 1993-2026</title>
+    <meta name="description" content="En memoria de Oliver Tree Nickell. Artista, director y visionario. 1993 — 2026.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Cinta icónica "Life Goes On" -->
+    <div class="lgo-ribbon" aria-hidden="true"></div>
 
     <!-- Loader -->
     <div class="loader" id="loader">
@@ -16,7 +22,6 @@
 
     <!-- Hero -->
     <header class="hero" id="inicio">
-        <!-- Pon tu foto de Oliver + clones como img/hero-bg.jpg -->
         <div class="hero-img"></div>
         <div class="hero-grain"></div>
         <div class="hero-gradient"></div>
@@ -28,6 +33,7 @@
                 <span class="nombre-linea">Oliver</span>
                 <span class="nombre-linea">Tree</span>
             </h1>
+            <div class="lgo-stripe hero-stripe" aria-hidden="true"></div>
             <div class="hero-meta">
                 <span>1993</span>
                 <span class="meta-divider"></span>
@@ -54,16 +60,15 @@
         <div class="wrap">
             <div class="sobre-layout">
                 <div class="sobre-foto">
-                    <!-- PLACEHOLDER: foto principal de Oliver -->
-                    <div class="foto-slot grande">
-                        <span>Foto principal</span>
+                    <div class="foto-frame grande">
+                        <img src="img/ot-portrait.jpg" alt="Oliver Tree en concierto" loading="lazy">
                     </div>
                 </div>
                 <div class="sobre-texto">
                     <h2>Oliver Tree Nickell</h2>
-                    <p class="sobre-intro">Artista. Director. Visionario.</p>
+                    <p class="sobre-intro">Artista · Director · Visionario</p>
                     <p>Nacido el 29 de junio de 1993 en Santa Cruz, California. Oliver construyó un universo artístico sin precedentes — donde la música, el cine, la moda y la performance se fusionaban en algo completamente nuevo.</p>
-                    <p>Firmó con Atlantic Records a los 23. Para los 25, "Alien Boy" lo había convertido en un fenómeno global. Pero Oliver siempre fue más que números: era un artista que controlaba cada detalle de su obra, desde la dirección de sus videos hasta el diseño de su ropa.</p>
+                    <p>Firmó con Atlantic Records y, para finales de la década, temas como "Hurt", "Alien Boy" y "Cash Machine" lo habían convertido en un fenómeno global con miles de millones de reproducciones. Pero Oliver siempre fue más que números: era un artista que controlaba cada detalle de su obra, desde la dirección de sus videos hasta el diseño de su ropa.</p>
                     <p>No seguía reglas. Las inventaba.</p>
                 </div>
             </div>
@@ -72,53 +77,126 @@
 
     <!-- Galería fullbleed -->
     <section class="galeria-full" id="galeria">
+        <div class="galeria-head wrap">
+            <h2>En el escenario</h2>
+            <span class="galeria-hint">desliza →</span>
+        </div>
         <div class="galeria-scroll">
-            <!-- PLACEHOLDER: pon aquí fotos de Oliver en alta resolución -->
-            <div class="gal-item"><div class="foto-slot horizontal"><span>Foto 1</span></div></div>
-            <div class="gal-item"><div class="foto-slot vertical"><span>Foto 2</span></div></div>
-            <div class="gal-item"><div class="foto-slot horizontal"><span>Foto 3</span></div></div>
-            <div class="gal-item"><div class="foto-slot vertical"><span>Foto 4</span></div></div>
-            <div class="gal-item"><div class="foto-slot horizontal"><span>Foto 5</span></div></div>
+            <figure class="gal-item"><div class="foto-frame horizontal"><img src="img/ot-live4.jpg" alt="Oliver Tree en vivo" loading="lazy"></div></figure>
+            <figure class="gal-item"><div class="foto-frame vertical"><img src="img/ot-live2.jpg" alt="Oliver Tree en concierto" loading="lazy"></div></figure>
+            <figure class="gal-item"><div class="foto-frame horizontal"><img src="img/ot-live3.jpg" alt="Oliver Tree cantando" loading="lazy"></div></figure>
+            <figure class="gal-item"><div class="foto-frame vertical"><img src="img/ot-live5.jpg" alt="Oliver Tree en vivo" loading="lazy"></div></figure>
+            <figure class="gal-item"><div class="foto-frame horizontal"><img src="img/ot-live1.jpg" alt="Oliver Tree en el escenario" loading="lazy"></div></figure>
+        </div>
+    </section>
+
+    <!-- Canciones esenciales -->
+    <section class="songs-sec" id="canciones">
+        <div class="wrap">
+            <h2 class="sec-titulo">Canciones esenciales</h2>
+            <p class="sec-sub">Los himnos que dejó. Su voz sigue sonando.</p>
+            <ol class="songs-list">
+                <li class="song">
+                    <a href="https://www.youtube.com/results?search_query=oliver+tree+hurt" target="_blank" rel="noopener">
+                        <span class="song-num">01</span>
+                        <span class="song-title">Hurt</span>
+                        <span class="song-year">2019</span>
+                        <span class="song-tag">himno generacional</span>
+                        <span class="song-play">▶</span>
+                    </a>
+                </li>
+                <li class="song">
+                    <a href="https://www.youtube.com/results?search_query=oliver+tree+alien+boy" target="_blank" rel="noopener">
+                        <span class="song-num">02</span>
+                        <span class="song-title">Alien Boy</span>
+                        <span class="song-year">2018</span>
+                        <span class="song-tag">fenómeno global</span>
+                        <span class="song-play">▶</span>
+                    </a>
+                </li>
+                <li class="song">
+                    <a href="https://www.youtube.com/results?search_query=oliver+tree+cash+machine" target="_blank" rel="noopener">
+                        <span class="song-num">03</span>
+                        <span class="song-title">Cash Machine</span>
+                        <span class="song-year">2018</span>
+                        <span class="song-tag">el comienzo viral</span>
+                        <span class="song-play">▶</span>
+                    </a>
+                </li>
+                <li class="song">
+                    <a href="https://www.youtube.com/results?search_query=oliver+tree+all+that" target="_blank" rel="noopener">
+                        <span class="song-num">04</span>
+                        <span class="song-title">All That</span>
+                        <span class="song-year">2018</span>
+                        <span class="song-tag">Alien Boy EP</span>
+                        <span class="song-play">▶</span>
+                    </a>
+                </li>
+                <li class="song">
+                    <a href="https://www.youtube.com/results?search_query=oliver+tree+let+me+down" target="_blank" rel="noopener">
+                        <span class="song-num">05</span>
+                        <span class="song-title">Let Me Down</span>
+                        <span class="song-year">2018</span>
+                        <span class="song-tag">primeros himnos</span>
+                        <span class="song-play">▶</span>
+                    </a>
+                </li>
+                <li class="song">
+                    <a href="https://www.youtube.com/results?search_query=oliver+tree+jerk" target="_blank" rel="noopener">
+                        <span class="song-num">06</span>
+                        <span class="song-title">Jerk</span>
+                        <span class="song-year">2020</span>
+                        <span class="song-tag">Ugly is Beautiful</span>
+                        <span class="song-play">▶</span>
+                    </a>
+                </li>
+                <li class="song">
+                    <a href="https://www.youtube.com/results?search_query=oliver+tree+bury+me+alive" target="_blank" rel="noopener">
+                        <span class="song-num">07</span>
+                        <span class="song-title">Bury Me Alive</span>
+                        <span class="song-year">2020</span>
+                        <span class="song-tag">Ugly is Beautiful</span>
+                        <span class="song-play">▶</span>
+                    </a>
+                </li>
+                <li class="song">
+                    <a href="https://www.youtube.com/results?search_query=oliver+tree+cowboys+dont+cry" target="_blank" rel="noopener">
+                        <span class="song-num">08</span>
+                        <span class="song-title">Cowboys Don't Cry</span>
+                        <span class="song-year">2022</span>
+                        <span class="song-tag">era Cowboy Tears</span>
+                        <span class="song-play">▶</span>
+                    </a>
+                </li>
+            </ol>
         </div>
     </section>
 
     <!-- Discografía -->
     <section class="disco-sec" id="musica">
         <div class="wrap">
-            <h2 class="disco-titulo">Discografía</h2>
+            <h2 class="sec-titulo">Discografía</h2>
             <div class="disco-grid">
-                <div class="disco-card">
-                    <div class="disco-art"><div class="foto-slot cuadrado"><span>Alien Boy EP</span></div></div>
-                    <div class="disco-info">
-                        <span class="disco-year">2018</span>
-                        <h3>Alien Boy EP</h3>
-                        <p>El inicio de todo. El mundo descubrió a Oliver Tree.</p>
-                    </div>
-                </div>
-                <div class="disco-card">
-                    <div class="disco-art"><div class="foto-slot cuadrado"><span>Ugly is Beautiful</span></div></div>
-                    <div class="disco-info">
-                        <span class="disco-year">2020</span>
-                        <h3>Ugly is Beautiful</h3>
-                        <p>Su declaración artística definitiva. Lo feo es hermoso.</p>
-                    </div>
-                </div>
-                <div class="disco-card">
-                    <div class="disco-art"><div class="foto-slot cuadrado"><span>Cowboy Tears</span></div></div>
-                    <div class="disco-info">
-                        <span class="disco-year">2022</span>
-                        <h3>Cowboy Tears</h3>
-                        <p>Vulnerabilidad sin filtro. Su trabajo más emotivo.</p>
-                    </div>
-                </div>
-                <div class="disco-card">
-                    <div class="disco-art"><div class="foto-slot cuadrado"><span>Alone in a Crowd</span></div></div>
-                    <div class="disco-info">
-                        <span class="disco-year">2023</span>
-                        <h3>Alone in a Crowd</h3>
-                        <p>Su despedida. Introspección absoluta.</p>
-                    </div>
-                </div>
+                <article class="disco-card">
+                    <span class="disco-year">2018</span>
+                    <h3>Alien Boy EP</h3>
+                    <p>El inicio de todo. El mundo descubrió a Oliver Tree.</p>
+                </article>
+                <article class="disco-card">
+                    <span class="disco-year">2020</span>
+                    <h3>Ugly is Beautiful</h3>
+                    <p>Su declaración artística definitiva. Lo feo es hermoso.</p>
+                </article>
+                <article class="disco-card">
+                    <span class="disco-year">2022</span>
+                    <h3>Cowboy Tears</h3>
+                    <p>Vulnerabilidad sin filtro. Su trabajo más emotivo.</p>
+                </article>
+                <article class="disco-card">
+                    <span class="disco-year">2023</span>
+                    <h3>Alone in a Crowd</h3>
+                    <p>Introspección absoluta. Identidad, soledad y permanencia.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -126,7 +204,7 @@
     <!-- Timeline -->
     <section class="timeline-sec" id="timeline">
         <div class="wrap">
-            <h2 class="timeline-titulo">Su historia</h2>
+            <h2 class="sec-titulo">Su historia</h2>
             <div class="tl">
                 <div class="tl-item" data-year="1993">
                     <div class="tl-marker"></div>
@@ -134,14 +212,6 @@
                         <span class="tl-year">1993</span>
                         <h3>Santa Cruz, California</h3>
                         <p>Nace Oliver Tree Nickell.</p>
-                    </div>
-                </div>
-                <div class="tl-item" data-year="2012">
-                    <div class="tl-marker"></div>
-                    <div class="tl-body">
-                        <span class="tl-year">2012</span>
-                        <h3>Primeras producciones</h3>
-                        <p>Comienza a crear música experimental bajo el nombre "Tree".</p>
                     </div>
                 </div>
                 <div class="tl-item" data-year="2016">
@@ -156,7 +226,7 @@
                     <div class="tl-marker"></div>
                     <div class="tl-body">
                         <span class="tl-year">2018</span>
-                        <h3>Alien Boy</h3>
+                        <h3>Alien Boy & Cash Machine</h3>
                         <p>Millones de reproducciones. Oliver se convierte en un fenómeno global.</p>
                     </div>
                 </div>
@@ -166,6 +236,14 @@
                         <span class="tl-year">2020</span>
                         <h3>Ugly is Beautiful</h3>
                         <p>Su álbum debut — una obra que redefinió lo que un artista independiente podía lograr.</p>
+                    </div>
+                </div>
+                <div class="tl-item" data-year="2021">
+                    <div class="tl-marker"></div>
+                    <div class="tl-body">
+                        <span class="tl-year">2021</span>
+                        <h3>Alcance global</h3>
+                        <p>Giras internacionales y miles de millones de reproducciones. Oliver se vuelve un fenómeno mundial.</p>
                     </div>
                 </div>
                 <div class="tl-item" data-year="2022">
@@ -199,8 +277,9 @@
     <!-- Video -->
     <section class="video-sec" id="video">
         <div class="wrap narrow">
+            <h2 class="sec-titulo center">Cowboys Don't Cry</h2>
             <div class="video-frame">
-                <iframe src="https://www.youtube.com/embed/D0jGB9JJgKU" title="Oliver Tree - Hurt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/UEoU6VbHs2c" title="Oliver Tree - Cowboys Don't Cry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -208,6 +287,7 @@
     <!-- Cierre -->
     <section class="cierre" id="cierre">
         <div class="wrap narrow">
+            <div class="lgo-stripe cierre-stripe" aria-hidden="true"></div>
             <h2 class="cierre-titulo">Para siempre.</h2>
             <p>Tu arte fue real. Tu visión fue única. Tu impacto es permanente.</p>
             <p>Descansa, Oliver. Nosotros seguimos aquí, escuchándote.</p>
@@ -219,9 +299,9 @@
         <div class="wrap">
             <div class="footer-inner">
                 <div class="footer-links">
-                    <a href="https://www.youtube.com/@OliverTree" target="_blank">YouTube</a>
-                    <a href="https://open.spotify.com/artist/6TzR3LPdNsQkaGriffh4Z5" target="_blank">Spotify</a>
-                    <a href="https://www.instagram.com/olivertree/" target="_blank">Instagram</a>
+                    <a href="https://www.youtube.com/@OliverTree" target="_blank" rel="noopener">YouTube</a>
+                    <a href="https://open.spotify.com/artist/6TzR3LPdNsQkaGriffh4Z5" target="_blank" rel="noopener">Spotify</a>
+                    <a href="https://www.instagram.com/olivertree/" target="_blank" rel="noopener">Instagram</a>
                 </div>
                 <p class="footer-by">udderboyz</p>
             </div>

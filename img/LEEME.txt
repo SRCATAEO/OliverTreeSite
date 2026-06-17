@@ -1,20 +1,28 @@
-INSTRUCCIONES PARA LAS FOTOS
-=============================
+FOTOS DE LA PAGINA
+===================
 
-1. HERO (fondo principal):
-   - Pon aqui la foto de Oliver y sus clones
-   - Nombrala: hero-bg.jpg
-   - Luego en styles.css, descomenta la linea:
-     /* background-image: url('img/hero-bg.jpg'); */
-   - Quitale los /* */ para que quede asi:
-     background-image: url('img/hero-bg.jpg');
+Las fotos actuales son fotografias reales de Oliver Tree en concierto,
+descargadas de Wikimedia Commons bajo licencia Creative Commons
+Attribution 2.0 (CC BY 2.0). Se pueden usar libremente dando credito.
 
-2. GALERIA (seccion "Momentos"):
-   - Pon las fotos aqui y en el index.html reemplaza
-     los <div class="foto-placeholder"> por <img src="img/tu-foto.jpg">
+Archivos:
+  ot-live1.jpg   -> fondo del HERO
+  ot-portrait.jpg-> foto de la seccion "Sobre"
+  ot-live2..5.jpg-> galeria "En el escenario"
 
-3. DISCOGRAFIA (portadas de albumes):
-   - Igual, reemplaza los placeholders con las portadas
+CREDITOS (CC BY 2.0):
+  - "Oliver Tree" por kingArthur_aus / Bruce (Sydney, Australia)
+    via Flickr -> Wikimedia Commons
+    https://commons.wikimedia.org/wiki/Category:Oliver_Tree
+  Licencia: https://creativecommons.org/licenses/by/2.0/
+
+COMO CAMBIAR UNA FOTO
+---------------------
+1. HERO: reemplaza img/ot-live1.jpg (o cambia la ruta en styles.css,
+   selector .hero-img -> background-image).
+2. SOBRE: reemplaza img/ot-portrait.jpg.
+3. GALERIA: reemplaza img/ot-live2.jpg ... ot-live5.jpg, o edita los
+   <img src="..."> dentro de la seccion .galeria-scroll en index.html.
 
 Formatos recomendados: .jpg o .webp
-Tamano recomendado para hero: minimo 1920px de ancho
+Ancho recomendado para hero: minimo 1920px.
