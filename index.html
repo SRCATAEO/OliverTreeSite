@@ -299,6 +299,51 @@
         </div>
     </section>
 
+    <!-- Eras -->
+    <section class="eras-sec" id="eras">
+        <div class="wrap">
+            <h2 class="sec-titulo center">Su universo visual</h2>
+            <p class="sec-sub center">Cada era fue una reinvención total — sonido, imagen y actitud.</p>
+            <div class="eras-grid">
+                <article class="era-card" data-era="alien">
+                    <div class="era-accent" style="background: var(--azul);"></div>
+                    <span class="era-years">2017 — 2019</span>
+                    <h3 class="era-name">Alien Boy</h3>
+                    <p class="era-look">Bowl cut icónico · Ropa oversized · Scooter · Gafas enormes</p>
+                    <p class="era-desc">La era que lo presentó al mundo. Un personaje absurdo, colorido e imposible de ignorar. Mezcla de indie pop con beats electrónicos — nadie sonaba así.</p>
+                </article>
+                <article class="era-card" data-era="ugly">
+                    <div class="era-accent" style="background: linear-gradient(90deg, var(--rosa), var(--azul));"></div>
+                    <span class="era-years">2019 — 2021</span>
+                    <h3 class="era-name">Ugly is Beautiful</h3>
+                    <p class="era-look">Chaqueta split rosa/azul · Pantalones gigantes · Stunts extremos</p>
+                    <p class="era-desc">Su pico comercial. La chaqueta bicolor se volvió su firma visual. Videos con acrobacias reales, humor negro y una estética que cruzó del internet al mainstream.</p>
+                </article>
+                <article class="era-card" data-era="cowboy">
+                    <div class="era-accent" style="background: var(--rojo);"></div>
+                    <span class="era-years">2022</span>
+                    <h3 class="era-name">Cowboy Tears</h3>
+                    <p class="era-look">Sombrero vaquero · Estética western · Vulnerabilidad emocional</p>
+                    <p class="era-desc">Oliver se reinventó como un cowboy melancólico. Dejó el humor por la emoción cruda — canciones sobre desamor y fragilidad con producción country-electrónica.</p>
+                </article>
+                <article class="era-card" data-era="alone">
+                    <div class="era-accent" style="background: var(--text-muted);"></div>
+                    <span class="era-years">2023</span>
+                    <h3 class="era-name">Alone in a Crowd</h3>
+                    <p class="era-look">Estilo despojado · Tonos oscuros · Introspección pura</p>
+                    <p class="era-desc">La era más sobria. Oliver se quitó los disfraces y dejó que la música hablara sola. Canciones sobre identidad, soledad y la búsqueda de algo permanente.</p>
+                </article>
+                <article class="era-card" data-era="final">
+                    <div class="era-accent" style="background: linear-gradient(90deg, var(--rosa), var(--rojo));"></div>
+                    <span class="era-years">2026</span>
+                    <h3 class="era-name">Love You Madly</h3>
+                    <p class="era-look">Su último capítulo · 17 canciones · La obra final</p>
+                    <p class="era-desc">Su despedida sin saberlo. Un álbum que mezcla todo lo que fue Oliver: energía, emoción, humor y una honestidad brutal. El cierre perfecto de un artista irrepetible.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Timeline -->
     <section class="timeline-sec" id="timeline">
         <div class="wrap">
@@ -430,6 +475,57 @@
                     <figcaption>— desde Colombia</figcaption>
                 </figure>
             </div>
+        </div>
+    </section>
+
+    <!-- Generador de wallpapers -->
+    <section class="wallpaper-sec" id="wallpaper">
+        <div class="wrap narrow">
+            <h2 class="sec-titulo center">Crea tu wallpaper</h2>
+            <p class="sec-sub center">Elige una frase y un color. Descarga tu póster de Oliver.</p>
+            <div class="wp-builder">
+                <div class="wp-options">
+                    <div class="wp-group">
+                        <label class="wp-label">Frase</label>
+                        <select id="wp-frase" class="wp-select">
+                            <option value="I just wanted to make something real">"I just wanted to make something real"</option>
+                            <option value="Life goes on">"Life goes on"</option>
+                            <option value="Ugly is beautiful">"Ugly is beautiful"</option>
+                            <option value="Cowboys don't cry">"Cowboys don't cry"</option>
+                            <option value="I'm not done yet">"I'm not done yet"</option>
+                            <option value="Everything's gonna be alright">"Everything's gonna be alright"</option>
+                            <option value="Para siempre.">"Para siempre."</option>
+                        </select>
+                    </div>
+                    <div class="wp-group">
+                        <label class="wp-label">Color</label>
+                        <div class="wp-colors">
+                            <button class="wp-color active" data-color="#080810" data-text="#eaeaea" title="Negro"></button>
+                            <button class="wp-color" data-color="#2d3adf" data-text="#ffffff" title="Azul"></button>
+                            <button class="wp-color" data-color="#e84393" data-text="#ffffff" title="Rosa"></button>
+                            <button class="wp-color" data-color="#d6263b" data-text="#efe7d2" title="Rojo"></button>
+                            <button class="wp-color" data-color="#1a1a2e" data-text="#fd79a8" title="Midnight"></button>
+                        </div>
+                    </div>
+                    <button id="wp-download" class="wp-btn">Descargar wallpaper</button>
+                </div>
+                <div class="wp-preview-wrap">
+                    <canvas id="wp-canvas" width="1080" height="1920"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deja una vela -->
+    <section class="velas-sec" id="velas">
+        <div class="wrap narrow">
+            <h2 class="sec-titulo center">Deja una vela</h2>
+            <p class="sec-sub center">Enciende una luz en su memoria.</p>
+            <div class="velas-counter">
+                <span id="velas-num">0</span> velas encendidas
+            </div>
+            <button id="vela-btn" class="vela-encender">Encender una vela</button>
+            <div class="velas-grid" id="velas-grid"></div>
         </div>
     </section>
 
