@@ -6,13 +6,13 @@
 }
 
 :root {
-    --rojo: #c0392b;
-    --rojo-claro: #e74c3c;
-    --azul: #1a3a6b;
-    --azul-claro: #2c5ea0;
-    --negro: #0d0d0d;
-    --gris-oscuro: #1a1a1a;
-    --gris: #2a2a2a;
+    --rosa: #e84393;
+    --rosa-claro: #fd79a8;
+    --azul: #2d3adf;
+    --azul-claro: #4a6cf7;
+    --negro: #0a0a0c;
+    --gris-oscuro: #131318;
+    --gris: #1e1e26;
     --texto: #f0f0f0;
     --texto-suave: #b3b3b3;
     --texto-apagado: #777;
@@ -56,8 +56,20 @@ h2 {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, var(--azul) 0%, var(--negro) 50%, var(--rojo) 100%);
-    opacity: 0.85;
+    /* Imagen de Oliver y sus clones como fondo */
+    /* Para poner tu foto: descomenta background-image y pon la ruta correcta */
+    /* background-image: url('img/hero-bg.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--negro);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(45, 58, 223, 0.7) 0%, rgba(10, 10, 12, 0.85) 45%, rgba(232, 67, 147, 0.7) 100%);
+    z-index: 1;
 }
 
 .hero-inner {
@@ -93,7 +105,7 @@ h2 {
     display: block;
     width: 60px;
     height: 2px;
-    background: var(--rojo);
+    background: var(--rosa);
     margin: 2.5rem auto 0;
 }
 
@@ -113,7 +125,7 @@ h2 {
 .intro-texto h2 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: var(--rojo-claro);
+    color: var(--rosa);
 }
 
 .intro-texto p {
@@ -230,7 +242,7 @@ h2 {
     top: 8px;
     bottom: 8px;
     width: 1px;
-    background: linear-gradient(to bottom, var(--azul-claro), var(--rojo));
+    background: linear-gradient(to bottom, var(--azul-claro), var(--rosa));
 }
 
 .evento {
@@ -252,8 +264,8 @@ h2 {
 }
 
 .evento.final::before {
-    background: var(--rojo);
-    box-shadow: 0 0 8px rgba(192, 57, 43, 0.5);
+    background: var(--rosa);
+    box-shadow: 0 0 8px rgba(232, 67, 147, 0.4);
 }
 
 .año {
@@ -266,7 +278,7 @@ h2 {
     margin-bottom: 4px;
 }
 
-.evento.final .año { color: var(--rojo-claro); }
+.evento.final .año { color: var(--rosa-claro); }
 
 .evento-info h3 {
     font-family: 'Playfair Display', serif;
@@ -305,7 +317,7 @@ h2 {
 /* Mensaje final */
 .mensaje {
     padding: 120px 0;
-    background: linear-gradient(170deg, var(--azul) 0%, var(--negro) 60%, var(--rojo) 130%);
+    background: linear-gradient(170deg, var(--azul) 0%, var(--negro) 60%, var(--rosa) 130%);
     text-align: center;
 }
 

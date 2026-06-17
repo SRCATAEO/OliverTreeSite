@@ -1,0 +1,20 @@
+INSTRUCCIONES PARA LAS FOTOS
+=============================
+
+1. HERO (fondo principal):
+   - Pon aqui la foto de Oliver y sus clones
+   - Nombrala: hero-bg.jpg
+   - Luego en styles.css, descomenta la linea:
+     /* background-image: url('img/hero-bg.jpg'); */
+   - Quitale los /* */ para que quede asi:
+     background-image: url('img/hero-bg.jpg');
+
+2. GALERIA (seccion "Momentos"):
+   - Pon las fotos aqui y en el index.html reemplaza
+     los <div class="foto-placeholder"> por <img src="img/tu-foto.jpg">
+
+3. DISCOGRAFIA (portadas de albumes):
+   - Igual, reemplaza los placeholders con las portadas
+
+Formatos recomendados: .jpg o .webp
+Tamano recomendado para hero: minimo 1920px de ancho
