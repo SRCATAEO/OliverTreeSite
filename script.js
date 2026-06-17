@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
 
 // Scroll reveal
 (function() {
-    var items = document.querySelectorAll('.sobre-layout, .disco-card, .tl-item, .contexto, .cierre, .video-sec, .galeria-head, .song, .songs-sec .sec-titulo, .songs-sec .sec-sub');
+    var items = document.querySelectorAll('.sobre-layout, .disco-card, .tl-item, .contexto, .cierre, .video-sec, .galeria-head, .song, .songs-sec .sec-titulo, .songs-sec .sec-sub, .hit-card, .hits-sec .sec-titulo, .hits-sec .sec-sub, .spotify-sec .sec-titulo, .spotify-frame, .tributo, .tributos-sec .sec-titulo');
 
     items.forEach(function(el) {
         el.classList.add('reveal');
