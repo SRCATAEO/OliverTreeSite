@@ -54,6 +54,22 @@ window.addEventListener('load', function() {
     });
 })();
 
+// Contador de días desde su partida
+(function() {
+    var el = document.getElementById('contador');
+    if (!el) return;
+    var partida = new Date(2026, 5, 14, 8, 59, 0); // 14 junio 2026
+    function actualizar() {
+        var ahora = new Date();
+        var diff = ahora - partida;
+        if (diff < 0) { el.textContent = ''; return; }
+        var dias = Math.floor(diff / 86400000);
+        el.textContent = 'Hace ' + dias + (dias === 1 ? ' día' : ' días') + ' que Oliver nos dejó';
+    }
+    actualizar();
+    setInterval(actualizar, 60000);
+})();
+
 // Stagger timeline items
 (function() {
     var tlItems = document.querySelectorAll('.tl-item');

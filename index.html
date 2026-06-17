@@ -69,6 +69,7 @@
     }
     </script>
 
+    <link rel="preload" as="image" href="img/ot-live1.jpg" fetchpriority="high">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -289,6 +290,11 @@
                     <h3>Alone in a Crowd</h3>
                     <p>Introspección absoluta. Identidad, soledad y permanencia.</p>
                 </article>
+                <article class="disco-card disco-card-final">
+                    <span class="disco-year">2026</span>
+                    <h3>Love You Madly Hate You Badly</h3>
+                    <p>Su último álbum. 17 canciones. La despedida que no sabíamos que era despedida.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -371,7 +377,7 @@
         <div class="wrap narrow">
             <h2 class="sec-titulo center">Cowboys Don't Cry</h2>
             <div class="video-frame">
-                <iframe src="https://www.youtube.com/embed/UEoU6VbHs2c" title="Oliver Tree - Cowboys Don't Cry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/UEoU6VbHs2c" title="Oliver Tree - Cowboys Don't Cry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -434,6 +440,7 @@
             <h2 class="cierre-titulo">Para siempre.</h2>
             <p>Tu arte fue real. Tu visión fue única. Tu impacto es permanente.</p>
             <p>Descansa, Oliver. Nosotros seguimos aquí, escuchándote.</p>
+            <p class="cierre-contador" id="contador"></p>
         </div>
     </section>
 
