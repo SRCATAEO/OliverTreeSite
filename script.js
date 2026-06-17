@@ -135,8 +135,32 @@ window.addEventListener('load', function() {
     var ctx = canvas.getContext('2d');
     var W = 1080, H = 1920;
 
+    var fotos = [
+        'img/ot-live1.jpg', 'img/ot-live2.jpg', 'img/ot-live3.jpg',
+        'img/ot-live4.jpg', 'img/ot-live5.jpg', 'img/ot-portrait.jpg'
+    ];
     var currentBg = '#080810';
     var currentText = '#eaeaea';
+    var currentImg = null;
+
+    // Preload all photos
+    var imgCache = {};
+    var loaded = 0;
+    fotos.forEach(function(src) {
+        var img = new Image();
+        img.onload = function() {
+            imgCache[src] = img;
+            loaded++;
+            if (loaded === fotos.length) pickRandomPhoto();
+        };
+        img.src = src;
+    });
+
+    function pickRandomPhoto() {
+        var src = fotos[Math.floor(Math.random() * fotos.length)];
+        currentImg = imgCache[src];
+        renderCanvas();
+    }
 
     // Set color button backgrounds
     colorBtns.forEach(function(b) {
@@ -148,7 +172,6 @@ window.addEventListener('load', function() {
         var sw = 30;
         ctx.save();
         ctx.translate(W / 2, y);
-        ctx.rotate(0);
         var totalW = 400;
         var startX = -totalW / 2;
         for (var i = 0; i < Math.ceil(totalW / sw); i++) {
@@ -159,8 +182,38 @@ window.addEventListener('load', function() {
     }
 
     function renderCanvas() {
+        // Background color
         ctx.fillStyle = currentBg;
         ctx.fillRect(0, 0, W, H);
+
+        // Photo
+        if (currentImg) {
+            var imgW = currentImg.width;
+            var imgH = currentImg.height;
+            var scale = Math.max(W / imgW, H / imgH);
+            var dw = imgW * scale;
+            var dh = imgH * scale;
+            var dx = (W - dw) / 2;
+            var dy = (H - dh) / 2;
+            ctx.drawImage(currentImg, dx, dy, dw, dh);
+
+            // Dark overlay with tint
+            ctx.fillStyle = currentBg;
+            ctx.globalAlpha = 0.6;
+            ctx.fillRect(0, 0, W, H);
+            ctx.globalAlpha = 1;
+
+            // Gradient vignette
+            var grad = ctx.createLinearGradient(0, 0, 0, H);
+            grad.addColorStop(0, currentBg);
+            grad.addColorStop(0.25, 'transparent');
+            grad.addColorStop(0.75, 'transparent');
+            grad.addColorStop(1, currentBg);
+            ctx.fillStyle = grad;
+            ctx.globalAlpha = 0.8;
+            ctx.fillRect(0, 0, W, H);
+            ctx.globalAlpha = 1;
+        }
 
         // IN MEMORIAM
         ctx.fillStyle = currentText;
@@ -183,18 +236,21 @@ window.addEventListener('load', function() {
         // Years
         ctx.font = '200 36px sans-serif';
         ctx.globalAlpha = 0.8;
+        ctx.fillStyle = currentText;
         ctx.fillText('1993  \u2014  2026', W / 2, 1140);
         ctx.globalAlpha = 1;
 
         // Quote
         var frase = fraseEl.value;
         ctx.font = 'italic 300 42px serif';
+        ctx.fillStyle = currentText;
         ctx.globalAlpha = 0.7;
         ctx.fillText('"' + frase + '"', W / 2, 1260);
         ctx.globalAlpha = 1;
 
         // Subtle bottom credit
         ctx.font = '200 20px sans-serif';
+        ctx.fillStyle = currentText;
         ctx.globalAlpha = 0.2;
         ctx.fillText('olivertree.online', W / 2, H - 60);
         ctx.globalAlpha = 1;
@@ -210,7 +266,7 @@ window.addEventListener('load', function() {
             b.classList.add('active');
             currentBg = b.dataset.color;
             currentText = b.dataset.text;
-            renderCanvas();
+            pickRandomPhoto();
         });
     });
 
