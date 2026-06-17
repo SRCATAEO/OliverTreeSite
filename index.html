@@ -5,182 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oliver Tree — 1993-2026</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-bar"></div>
+    </div>
+
+    <!-- Hero -->
     <header class="hero" id="inicio">
-        <!-- FONDO: Reemplaza hero-bg.jpg con la foto de Oliver y sus clones -->
-        <!-- Coloca tu imagen como /img/hero-bg.jpg o cambia la ruta en styles.css (.hero-bg) -->
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-inner">
-            <p class="hero-fecha">14 de junio de 2026</p>
-            <h1>Oliver Tree</h1>
-            <p class="hero-sub">1993 — 2026</p>
-            <span class="hero-line"></span>
+        <!-- Pon tu foto de Oliver + clones como img/hero-bg.jpg -->
+        <div class="hero-img"></div>
+        <div class="hero-grain"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <div class="hero-top">
+                <span class="hero-tag">IN MEMORIAM</span>
+            </div>
+            <h1 class="hero-nombre">
+                <span class="nombre-linea">Oliver</span>
+                <span class="nombre-linea">Tree</span>
+            </h1>
+            <div class="hero-meta">
+                <span>1993</span>
+                <span class="meta-divider"></span>
+                <span>2026</span>
+            </div>
+            <p class="hero-cita">"I just wanted to make something real"</p>
+        </div>
+        <div class="hero-scroll">
+            <span class="scroll-text">scroll</span>
+            <span class="scroll-line"></span>
         </div>
     </header>
 
-    <!-- Intro -->
-    <section class="intro" id="intro">
-        <div class="wrap">
-            <div class="intro-grid">
-                <div class="intro-foto">
-                    <!-- PLACEHOLDER: Reemplaza con foto de Oliver -->
-                    <div class="foto-placeholder">
-                        <span>Foto de Oliver</span>
-                    </div>
-                </div>
-                <div class="intro-texto">
-                    <h2>En memoria</h2>
-                    <p>Oliver Tree Nickell falleció el 14 de junio de 2026 a las 8:59 de la mañana en un accidente aéreo en Río de Janeiro, Brasil. Dos helicópteros colisionaron durante un vuelo, llevándose la vida de Oliver y de su compañero Gaspi.</p>
-                    <p>Tenía 32 años. Dejó una marca imborrable en la música, en el arte visual y en millones de personas que encontraron en su trabajo algo genuino, algo distinto.</p>
-                    <p>Esta página existe para recordarlo como lo que fue: un artista completo que nunca tuvo miedo de ser diferente.</p>
-                </div>
-            </div>
+    <!-- Contexto -->
+    <section class="contexto">
+        <div class="wrap narrow">
+            <p class="contexto-fecha">14 de junio de 2026 · 8:59 AM · Río de Janeiro, Brasil</p>
+            <p class="contexto-texto">Oliver Tree Nickell y Gaspi perdieron la vida en un accidente aéreo cuando dos helicópteros colisionaron durante un vuelo sobre Río de Janeiro. Oliver tenía 32 años.</p>
         </div>
     </section>
 
-    <!-- Sobre Oliver -->
+    <!-- Sobre -->
     <section class="sobre" id="sobre">
         <div class="wrap">
-            <h2>Quién fue Oliver Tree</h2>
-            <div class="sobre-contenido">
-                <p>Nacido el 29 de junio de 1993 en Santa Cruz, California. Desde joven mostró una visión artística que iba más allá de la música — combinando dirección, comedia y una estética visual imposible de ignorar.</p>
-                <p>Firmó con Atlantic Records en 2016 y para 2018 ya era un nombre que resonaba en todo el mundo con "Alien Boy". Lo que siguió fue una carrera marcada por la autenticidad: cada video, cada canción, cada aparición pública era deliberada, pensada, con un nivel de compromiso creativo que pocos artistas alcanzan.</p>
-                <p>Oliver no seguía tendencias. Las creaba. Y lo hacía con una honestidad emocional que conectaba profundamente con su audiencia, incluso cuando el mundo exterior no lo entendía del todo.</p>
+            <div class="sobre-layout">
+                <div class="sobre-foto">
+                    <!-- PLACEHOLDER: foto principal de Oliver -->
+                    <div class="foto-slot grande">
+                        <span>Foto principal</span>
+                    </div>
+                </div>
+                <div class="sobre-texto">
+                    <h2>Oliver Tree Nickell</h2>
+                    <p class="sobre-intro">Artista. Director. Visionario.</p>
+                    <p>Nacido el 29 de junio de 1993 en Santa Cruz, California. Oliver construyó un universo artístico sin precedentes — donde la música, el cine, la moda y la performance se fusionaban en algo completamente nuevo.</p>
+                    <p>Firmó con Atlantic Records a los 23. Para los 25, "Alien Boy" lo había convertido en un fenómeno global. Pero Oliver siempre fue más que números: era un artista que controlaba cada detalle de su obra, desde la dirección de sus videos hasta el diseño de su ropa.</p>
+                    <p>No seguía reglas. Las inventaba.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Galería -->
-    <section class="galeria" id="galeria">
-        <div class="wrap">
-            <h2>Momentos</h2>
-            <div class="galeria-grid">
-                <!-- PLACEHOLDER: El usuario pondrá sus fotos aquí -->
-                <div class="galeria-item">
-                    <div class="foto-placeholder horizontal"><span>Foto 1</span></div>
-                </div>
-                <div class="galeria-item">
-                    <div class="foto-placeholder vertical"><span>Foto 2</span></div>
-                </div>
-                <div class="galeria-item">
-                    <div class="foto-placeholder horizontal"><span>Foto 3</span></div>
-                </div>
-                <div class="galeria-item">
-                    <div class="foto-placeholder vertical"><span>Foto 4</span></div>
-                </div>
-                <div class="galeria-item">
-                    <div class="foto-placeholder horizontal"><span>Foto 5</span></div>
-                </div>
-                <div class="galeria-item">
-                    <div class="foto-placeholder horizontal"><span>Foto 6</span></div>
-                </div>
-            </div>
+    <!-- Galería fullbleed -->
+    <section class="galeria-full" id="galeria">
+        <div class="galeria-scroll">
+            <!-- PLACEHOLDER: pon aquí fotos de Oliver en alta resolución -->
+            <div class="gal-item"><div class="foto-slot horizontal"><span>Foto 1</span></div></div>
+            <div class="gal-item"><div class="foto-slot vertical"><span>Foto 2</span></div></div>
+            <div class="gal-item"><div class="foto-slot horizontal"><span>Foto 3</span></div></div>
+            <div class="gal-item"><div class="foto-slot vertical"><span>Foto 4</span></div></div>
+            <div class="gal-item"><div class="foto-slot horizontal"><span>Foto 5</span></div></div>
         </div>
     </section>
 
     <!-- Discografía -->
-    <section class="discografia" id="musica">
+    <section class="disco-sec" id="musica">
         <div class="wrap">
-            <h2>Su música</h2>
-            <p class="seccion-desc">Las obras que definieron una generación.</p>
-            <div class="discos">
-                <div class="disco">
-                    <div class="disco-cover">
-                        <!-- PLACEHOLDER: portada del álbum -->
-                        <div class="foto-placeholder cuadrado"><span>Alien Boy EP</span></div>
+            <h2 class="disco-titulo">Discografía</h2>
+            <div class="disco-grid">
+                <div class="disco-card">
+                    <div class="disco-art"><div class="foto-slot cuadrado"><span>Alien Boy EP</span></div></div>
+                    <div class="disco-info">
+                        <span class="disco-year">2018</span>
+                        <h3>Alien Boy EP</h3>
+                        <p>El inicio de todo. El mundo descubrió a Oliver Tree.</p>
                     </div>
-                    <h3>Alien Boy EP</h3>
-                    <span class="disco-año">2018</span>
                 </div>
-                <div class="disco">
-                    <div class="disco-cover">
-                        <div class="foto-placeholder cuadrado"><span>Ugly is Beautiful</span></div>
+                <div class="disco-card">
+                    <div class="disco-art"><div class="foto-slot cuadrado"><span>Ugly is Beautiful</span></div></div>
+                    <div class="disco-info">
+                        <span class="disco-year">2020</span>
+                        <h3>Ugly is Beautiful</h3>
+                        <p>Su declaración artística definitiva. Lo feo es hermoso.</p>
                     </div>
-                    <h3>Ugly is Beautiful</h3>
-                    <span class="disco-año">2020</span>
                 </div>
-                <div class="disco">
-                    <div class="disco-cover">
-                        <div class="foto-placeholder cuadrado"><span>Cowboy Tears</span></div>
+                <div class="disco-card">
+                    <div class="disco-art"><div class="foto-slot cuadrado"><span>Cowboy Tears</span></div></div>
+                    <div class="disco-info">
+                        <span class="disco-year">2022</span>
+                        <h3>Cowboy Tears</h3>
+                        <p>Vulnerabilidad sin filtro. Su trabajo más emotivo.</p>
                     </div>
-                    <h3>Cowboy Tears</h3>
-                    <span class="disco-año">2022</span>
                 </div>
-                <div class="disco">
-                    <div class="disco-cover">
-                        <div class="foto-placeholder cuadrado"><span>Alone in a Crowd</span></div>
+                <div class="disco-card">
+                    <div class="disco-art"><div class="foto-slot cuadrado"><span>Alone in a Crowd</span></div></div>
+                    <div class="disco-info">
+                        <span class="disco-year">2023</span>
+                        <h3>Alone in a Crowd</h3>
+                        <p>Su despedida. Introspección absoluta.</p>
                     </div>
-                    <h3>Alone in a Crowd</h3>
-                    <span class="disco-año">2023</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Timeline -->
-    <section class="timeline" id="timeline">
+    <section class="timeline-sec" id="timeline">
         <div class="wrap">
-            <h2>Su camino</h2>
-            <div class="linea">
-                <div class="evento">
-                    <span class="año">1993</span>
-                    <div class="evento-info">
+            <h2 class="timeline-titulo">Su historia</h2>
+            <div class="tl">
+                <div class="tl-item" data-year="1993">
+                    <div class="tl-marker"></div>
+                    <div class="tl-body">
+                        <span class="tl-year">1993</span>
                         <h3>Santa Cruz, California</h3>
                         <p>Nace Oliver Tree Nickell.</p>
                     </div>
                 </div>
-                <div class="evento">
-                    <span class="año">2012</span>
-                    <div class="evento-info">
-                        <h3>Primeros pasos</h3>
-                        <p>Comienza a producir música bajo el nombre "Tree", explorando electrónica y rap experimental.</p>
+                <div class="tl-item" data-year="2012">
+                    <div class="tl-marker"></div>
+                    <div class="tl-body">
+                        <span class="tl-year">2012</span>
+                        <h3>Primeras producciones</h3>
+                        <p>Comienza a crear música experimental bajo el nombre "Tree".</p>
                     </div>
                 </div>
-                <div class="evento">
-                    <span class="año">2016</span>
-                    <div class="evento-info">
+                <div class="tl-item" data-year="2016">
+                    <div class="tl-marker"></div>
+                    <div class="tl-body">
+                        <span class="tl-year">2016</span>
                         <h3>Atlantic Records</h3>
-                        <p>Firma con uno de los sellos más grandes del mundo. La industria reconoce su talento.</p>
+                        <p>Firma con uno de los sellos más importantes del mundo.</p>
                     </div>
                 </div>
-                <div class="evento">
-                    <span class="año">2018</span>
-                    <div class="evento-info">
-                        <h3>"Alien Boy"</h3>
-                        <p>El EP que lo catapultó. Millones de reproducciones y una base de fans que crecía exponencialmente.</p>
+                <div class="tl-item" data-year="2018">
+                    <div class="tl-marker"></div>
+                    <div class="tl-body">
+                        <span class="tl-year">2018</span>
+                        <h3>Alien Boy</h3>
+                        <p>Millones de reproducciones. Oliver se convierte en un fenómeno global.</p>
                     </div>
                 </div>
-                <div class="evento">
-                    <span class="año">2020</span>
-                    <div class="evento-info">
+                <div class="tl-item" data-year="2020">
+                    <div class="tl-marker"></div>
+                    <div class="tl-body">
+                        <span class="tl-year">2020</span>
                         <h3>Ugly is Beautiful</h3>
-                        <p>Su álbum debut. Una declaración artística que demostró que no había límites para su visión.</p>
+                        <p>Su álbum debut — una obra que redefinió lo que un artista independiente podía lograr.</p>
                     </div>
                 </div>
-                <div class="evento">
-                    <span class="año">2022</span>
-                    <div class="evento-info">
-                        <h3>Cowboy Tears</h3>
-                        <p>Gira mundial. Vulnerabilidad y fuerza en cada canción. Oliver en su momento más maduro.</p>
+                <div class="tl-item" data-year="2022">
+                    <div class="tl-marker"></div>
+                    <div class="tl-body">
+                        <span class="tl-year">2022</span>
+                        <h3>Cowboy Tears + gira mundial</h3>
+                        <p>Shows sold-out alrededor del mundo. Oliver en su mejor momento creativo.</p>
                     </div>
                 </div>
-                <div class="evento">
-                    <span class="año">2023</span>
-                    <div class="evento-info">
+                <div class="tl-item" data-year="2023">
+                    <div class="tl-marker"></div>
+                    <div class="tl-body">
+                        <span class="tl-year">2023</span>
                         <h3>Alone in a Crowd</h3>
-                        <p>Su trabajo más introspectivo. Canciones que hablaban de soledad, conexión y lo que significa existir.</p>
+                        <p>Su trabajo más personal. Canciones sobre identidad, soledad y permanencia.</p>
                     </div>
                 </div>
-                <div class="evento final">
-                    <span class="año">2026</span>
-                    <div class="evento-info">
-                        <h3>14 de junio, Río de Janeiro</h3>
-                        <p>Oliver nos deja. Su música, su arte y su espíritu permanecen.</p>
+                <div class="tl-item final" data-year="2026">
+                    <div class="tl-marker"></div>
+                    <div class="tl-body">
+                        <span class="tl-year">2026</span>
+                        <h3>14 de junio · Río de Janeiro</h3>
+                        <p>Oliver nos deja. Su legado permanece intacto.</p>
                     </div>
                 </div>
             </div>
@@ -189,34 +198,33 @@
 
     <!-- Video -->
     <section class="video-sec" id="video">
-        <div class="wrap">
-            <h2>Escúchalo una vez más</h2>
-            <div class="video-container">
+        <div class="wrap narrow">
+            <div class="video-frame">
                 <iframe src="https://www.youtube.com/embed/D0jGB9JJgKU" title="Oliver Tree - Hurt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Mensaje final -->
-    <section class="mensaje" id="mensaje">
-        <div class="wrap">
-            <div class="mensaje-contenido">
-                <h2>Para siempre, Oliver.</h2>
-                <p>Tu música nos acompañó en los momentos más difíciles y en los más felices. Nos enseñaste que ser diferente no es un defecto — es un regalo. Que el arte verdadero viene de la honestidad, no del miedo.</p>
-                <p>Descansa. Nosotros seguimos escuchándote.</p>
-            </div>
+    <!-- Cierre -->
+    <section class="cierre" id="cierre">
+        <div class="wrap narrow">
+            <h2 class="cierre-titulo">Para siempre.</h2>
+            <p>Tu arte fue real. Tu visión fue única. Tu impacto es permanente.</p>
+            <p>Descansa, Oliver. Nosotros seguimos aquí, escuchándote.</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="wrap">
-            <div class="footer-links">
-                <a href="https://www.youtube.com/@OliverTree" target="_blank">YouTube</a>
-                <a href="https://open.spotify.com/artist/6TzR3LPdNsQkaGriffh4Z5" target="_blank">Spotify</a>
-                <a href="https://www.instagram.com/olivertree/" target="_blank">Instagram</a>
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="https://www.youtube.com/@OliverTree" target="_blank">YouTube</a>
+                    <a href="https://open.spotify.com/artist/6TzR3LPdNsQkaGriffh4Z5" target="_blank">Spotify</a>
+                    <a href="https://www.instagram.com/olivertree/" target="_blank">Instagram</a>
+                </div>
+                <p class="footer-by">udderboyz</p>
             </div>
-            <p class="footer-credit">udderboyz</p>
         </div>
     </footer>
 
