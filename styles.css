@@ -7,6 +7,8 @@
     --rosa-soft: #fd79a8;
     --azul: #2d3adf;
     --azul-soft: #6c7ff7;
+    --rojo: #d6263b;
+    --crema: #efe7d2;
     --bg: #080810;
     --surface: #0e0e18;
     --card: #14142a;
@@ -16,6 +18,14 @@
     --serif: 'Cormorant Garamond', serif;
     --sans: 'Inter', sans-serif;
     --display: 'Bebas Neue', sans-serif;
+    /* Patrón del suéter "Life Goes On": rojo / crema / azul en diagonal */
+    --lgo: repeating-linear-gradient(
+        45deg,
+        var(--rojo) 0, var(--rojo) 18px,
+        var(--crema) 18px, var(--crema) 25px,
+        var(--azul) 25px, var(--azul) 43px,
+        var(--crema) 43px, var(--crema) 50px
+    );
 }
 
 html { scroll-behavior: smooth; }
@@ -31,6 +41,42 @@ body {
 
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 .wrap.narrow { max-width: 800px; }
+
+/* Títulos de sección reutilizables */
+.sec-titulo {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+.sec-titulo.center { text-align: center; }
+.sec-sub {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+/* === CINTA / RAYAS "LIFE GOES ON" === */
+.lgo-ribbon {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: var(--lgo);
+    z-index: 10000;
+    opacity: 0.9;
+}
+
+.lgo-stripe {
+    height: 8px;
+    width: 120px;
+    background: var(--lgo);
+    border-radius: 4px;
+}
+
+.hero-stripe { margin: 0 auto 28px; }
+.cierre-stripe { margin: 0 auto 40px; }
 
 /* === LOADER === */
 .loader {
@@ -52,10 +98,11 @@ body {
 
 .loader-bar {
     width: 120px;
-    height: 1px;
-    background: var(--text-muted);
+    height: 2px;
+    background: rgba(255,255,255,0.08);
     position: relative;
     overflow: hidden;
+    border-radius: 2px;
 }
 
 .loader-bar::after {
@@ -85,13 +132,12 @@ body {
 .hero-img {
     position: absolute;
     inset: 0;
-    /* Descomenta y pon la ruta de tu foto de Oliver + clones */
-    /* background-image: url('img/hero-bg.jpg'); */
+    background-image: url('img/ot-live1.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: 60% center;
     background-color: var(--bg);
-    transform: scale(1.05);
-    transition: transform 8s ease-out;
+    transform: scale(1.08);
+    transition: transform 9s ease-out;
 }
 
 .hero.loaded .hero-img {
@@ -101,7 +147,7 @@ body {
 .hero-grain {
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 2;
 }
@@ -110,8 +156,8 @@ body {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(180deg, rgba(8,8,16,0.3) 0%, rgba(8,8,16,0.1) 40%, rgba(8,8,16,0.85) 100%),
-        linear-gradient(135deg, rgba(45,58,223,0.4) 0%, transparent 50%, rgba(232,67,147,0.35) 100%);
+        linear-gradient(180deg, rgba(8,8,16,0.55) 0%, rgba(8,8,16,0.25) 35%, rgba(8,8,16,0.92) 100%),
+        linear-gradient(115deg, rgba(45,58,223,0.45) 0%, transparent 45%, rgba(232,67,147,0.4) 100%);
     z-index: 3;
 }
 
@@ -119,17 +165,19 @@ body {
     position: relative;
     z-index: 4;
     text-align: center;
+    padding: 0 20px;
 }
 
 .hero-tag {
     display: inline-block;
     font-size: 0.7rem;
     letter-spacing: 5px;
-    color: var(--text-dim);
-    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,0.25);
     padding: 8px 20px;
     margin-bottom: 40px;
     font-weight: 400;
+    backdrop-filter: blur(4px);
 }
 
 .hero-nombre {
@@ -138,7 +186,8 @@ body {
     font-size: clamp(4.5rem, 14vw, 11rem);
     line-height: 0.9;
     letter-spacing: -2px;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+    text-shadow: 0 4px 50px rgba(0,0,0,0.6);
 }
 
 .nombre-linea {
@@ -161,9 +210,9 @@ body {
     gap: 16px;
     font-size: 1rem;
     letter-spacing: 4px;
-    color: var(--text-dim);
+    color: var(--text);
     font-weight: 200;
-    margin-bottom: 30px;
+    margin-bottom: 26px;
 }
 
 .meta-divider {
@@ -175,8 +224,8 @@ body {
 .hero-cita {
     font-family: var(--serif);
     font-style: italic;
-    font-size: 1.1rem;
-    color: var(--text-dim);
+    font-size: 1.2rem;
+    color: #ddd;
     font-weight: 300;
 }
 
@@ -195,7 +244,7 @@ body {
 .scroll-text {
     font-size: 0.65rem;
     letter-spacing: 3px;
-    color: var(--text-muted);
+    color: #bbb;
     text-transform: uppercase;
 }
 
@@ -213,7 +262,7 @@ body {
 
 /* === CONTEXTO === */
 .contexto {
-    padding: 80px 0;
+    padding: 90px 0;
     text-align: center;
     border-bottom: 1px solid rgba(255,255,255,0.04);
 }
@@ -228,7 +277,7 @@ body {
 
 .contexto-texto {
     font-family: var(--serif);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 1.8;
     color: var(--text-dim);
     font-weight: 300;
@@ -243,7 +292,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 80px;
-    align-items: start;
+    align-items: center;
 }
 
 .sobre-texto h2 {
@@ -272,34 +321,73 @@ body {
 .sobre-texto p:last-child {
     color: var(--text);
     font-family: var(--serif);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-style: italic;
     margin-top: 30px;
 }
 
-/* === FOTO SLOTS (placeholders) === */
-.foto-slot {
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    border-radius: 3px;
+/* === FOTO FRAMES === */
+.foto-frame {
     overflow: hidden;
+    border-radius: 4px;
     position: relative;
+    background: var(--card);
 }
 
-.foto-slot.grande { aspect-ratio: 3/4; }
-.foto-slot.horizontal { aspect-ratio: 16/9; min-height: 300px; }
-.foto-slot.vertical { aspect-ratio: 9/16; min-height: 400px; }
-.foto-slot.cuadrado { aspect-ratio: 1/1; }
+.foto-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+
+.foto-frame:hover img { transform: scale(1.04); }
+
+.foto-frame.grande {
+    aspect-ratio: 4/5;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+}
+
+/* acento de rayas LGO en la foto principal */
+.sobre-foto { position: relative; }
+.sobre-foto::before {
+    content: '';
+    position: absolute;
+    left: -14px;
+    top: 30px;
+    bottom: 30px;
+    width: 8px;
+    border-radius: 4px;
+    background: var(--lgo);
+    z-index: 2;
+}
 
 /* === GALERIA HORIZONTAL SCROLL === */
 .galeria-full {
-    padding: 60px 0;
+    padding: 60px 0 80px;
     overflow: hidden;
+}
+
+.galeria-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.galeria-head h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.galeria-hint {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
 .galeria-scroll {
@@ -319,64 +407,133 @@ body {
     scroll-snap-align: start;
 }
 
-.gal-item .foto-slot.horizontal { width: 500px; height: 300px; }
-.gal-item .foto-slot.vertical { width: 260px; height: 400px; }
+.gal-item .foto-frame.horizontal { width: 540px; height: 340px; }
+.gal-item .foto-frame.vertical { width: 280px; height: 420px; }
+
+/* === CANCIONES === */
+.songs-sec {
+    padding: 130px 0;
+    background: var(--surface);
+}
+
+.songs-list {
+    list-style: none;
+    counter-reset: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.song a {
+    display: grid;
+    grid-template-columns: 60px 1fr auto auto 40px;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.song a:hover {
+    background: linear-gradient(90deg, rgba(232,67,147,0.06), transparent);
+    padding-left: 22px;
+}
+
+.song-num {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+.song a:hover .song-num { color: var(--rosa); }
+
+.song-title {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+.song-year {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--azul-soft);
+}
+
+.song-tag {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+.song-play {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: right;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.3s, transform 0.3s, color 0.3s;
+}
+.song a:hover .song-play {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--rosa);
+}
 
 /* === DISCOGRAFIA === */
 .disco-sec {
     padding: 140px 0;
 }
 
-.disco-titulo {
-    font-family: var(--serif);
-    font-size: 2.6rem;
-    font-weight: 300;
-    margin-bottom: 60px;
-    letter-spacing: -0.5px;
-}
-
 .disco-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 24px;
+    margin-top: 30px;
 }
 
 .disco-card {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 24px;
-    align-items: start;
-    padding: 24px;
+    position: relative;
+    padding: 36px 32px;
     background: var(--surface);
-    border: 1px solid rgba(255,255,255,0.04);
-    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 6px;
+    overflow: hidden;
     transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.disco-card:hover {
-    border-color: rgba(232, 67, 147, 0.2);
-    transform: translateY(-3px);
+.disco-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--lgo);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.disco-art { border-radius: 3px; overflow: hidden; }
+.disco-card:hover {
+    border-color: rgba(232, 67, 147, 0.25);
+    transform: translateY(-4px);
+}
+.disco-card:hover::before { opacity: 1; }
 
 .disco-year {
-    font-size: 0.7rem;
+    font-family: var(--display);
+    font-size: 1.6rem;
     letter-spacing: 2px;
     color: var(--azul-soft);
-    text-transform: uppercase;
 }
 
-.disco-info h3 {
+.disco-card h3 {
     font-family: var(--serif);
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 400;
-    margin: 4px 0 8px;
+    margin: 6px 0 10px;
 }
 
-.disco-info p {
+.disco-card p {
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     font-weight: 300;
 }
 
@@ -386,17 +543,10 @@ body {
     background: var(--surface);
 }
 
-.timeline-titulo {
-    font-family: var(--serif);
-    font-size: 2.6rem;
-    font-weight: 300;
-    margin-bottom: 60px;
-    letter-spacing: -0.5px;
-}
-
 .tl {
     position: relative;
     padding-left: 50px;
+    margin-top: 30px;
 }
 
 .tl::before {
@@ -405,9 +555,9 @@ body {
     left: 16px;
     top: 10px;
     bottom: 10px;
-    width: 1px;
+    width: 2px;
     background: linear-gradient(to bottom, var(--azul), var(--rosa));
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .tl-item {
@@ -427,8 +577,8 @@ body {
     position: absolute;
     left: -42px;
     top: 6px;
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     background: var(--azul-soft);
     box-shadow: 0 0 0 3px var(--surface);
@@ -436,7 +586,7 @@ body {
 
 .tl-item.final .tl-marker {
     background: var(--rosa);
-    box-shadow: 0 0 12px rgba(232,67,147,0.4), 0 0 0 3px var(--surface);
+    box-shadow: 0 0 14px rgba(232,67,147,0.5), 0 0 0 3px var(--surface);
 }
 
 .tl-year {
@@ -451,7 +601,7 @@ body {
 
 .tl-body h3 {
     font-family: var(--serif);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 400;
     margin: 4px 0 6px;
 }
@@ -464,8 +614,10 @@ body {
 
 /* === VIDEO === */
 .video-sec {
-    padding: 100px 0;
+    padding: 110px 0;
 }
+
+.video-sec .sec-titulo { margin-bottom: 40px; }
 
 .video-frame {
     position: relative;
@@ -473,7 +625,7 @@ body {
     padding-bottom: 56.25%;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
 .video-frame iframe {
@@ -487,7 +639,7 @@ body {
 .cierre {
     padding: 160px 0;
     text-align: center;
-    background: linear-gradient(170deg, rgba(45,58,223,0.15) 0%, var(--bg) 40%, rgba(232,67,147,0.12) 100%);
+    background: linear-gradient(170deg, rgba(45,58,223,0.16) 0%, var(--bg) 40%, rgba(232,67,147,0.14) 100%);
 }
 
 .cierre-titulo {
@@ -500,7 +652,7 @@ body {
 
 .cierre p {
     font-family: var(--serif);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--text-dim);
     font-weight: 300;
     line-height: 1.9;
@@ -566,11 +718,13 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .disco-card {
-        grid-template-columns: 120px 1fr;
-    }
-
     .hero-nombre { font-size: clamp(3.5rem, 12vw, 7rem); }
+
+    .song a {
+        grid-template-columns: 40px 1fr auto;
+        gap: 14px;
+    }
+    .song-tag { display: none; }
 
     .footer-inner {
         flex-direction: column;
@@ -579,21 +733,17 @@ footer {
 }
 
 @media (max-width: 550px) {
-    .sobre, .disco-sec, .timeline-sec { padding: 80px 0; }
+    .sobre, .disco-sec, .timeline-sec, .songs-sec { padding: 80px 0; }
 
     .hero-nombre { font-size: 3.2rem; }
 
     .hero-tag { font-size: 0.6rem; padding: 6px 14px; }
 
-    .disco-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+    .song-title { font-size: 1.3rem; }
+    .song-year { display: none; }
 
-    .disco-art { max-width: 200px; margin: 0 auto; }
-
-    .gal-item .foto-slot.horizontal { width: 320px; height: 200px; }
-    .gal-item .foto-slot.vertical { width: 200px; height: 320px; }
+    .gal-item .foto-frame.horizontal { width: 320px; height: 200px; }
+    .gal-item .foto-frame.vertical { width: 220px; height: 330px; }
 
     .tl { padding-left: 36px; }
     .tl-marker { left: -28px; }

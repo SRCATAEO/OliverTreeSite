@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
 
 // Scroll reveal
 (function() {
-    var items = document.querySelectorAll('.sobre-layout, .disco-card, .tl-item, .contexto, .cierre, .video-sec');
+    var items = document.querySelectorAll('.sobre-layout, .disco-card, .tl-item, .contexto, .cierre, .video-sec, .galeria-head, .song, .songs-sec .sec-titulo, .songs-sec .sec-sub');
 
     items.forEach(function(el) {
         el.classList.add('reveal');
